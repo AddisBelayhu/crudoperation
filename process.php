@@ -10,7 +10,9 @@ if(isset($_POST['submit'])){
     $sql= "insert into employee(first_name,last_name,city_name,email) values('$first_name','$last_name','$city_name','$email')";
 
     if(mysqli_query($con,$sql)){
-        echo "New recored in inserted";
+        //echo "New recored in inserted";
+       header('location:retrive.php');
+       
     }else{
         echo "Error:".$sql."<br>".mysqli_error($con);
     }
